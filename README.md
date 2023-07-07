@@ -1,3 +1,3 @@
-The Odin Project: Landing Page
+The Odin Project: Rock Paper Scissors
 
 [View the site](https://andziuba.github.io/rock-paper-scissors/)
