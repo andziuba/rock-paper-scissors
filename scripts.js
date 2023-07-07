@@ -1,21 +1,26 @@
+const buttons = document.querySelectorAll(".choices");
+const container = document.querySelector(".container");
+const message = document.querySelector(".message");
+const referenceNode = document.querySelector(".result");
+const playerIcon = document.getElementById("player-icon");
+const computerIcon = document.getElementById("computer-icon");
+const tryAgainButton = document.querySelector(".try-again");
+tryAgainButton.classList.add("try-again");
+tryAgainButton.textContent = "Try Again";
+
 function resetGame() {
     // remove "Try Again" button
-    const container = document.querySelector(".container");
-    const tryAgainButton = document.querySelector(".try-again");
     container.removeChild(tryAgainButton);
-    
-    const message = document.querySelector(".message");
     message.textContent = "Make a choice to start the game";
 
-    document.getElementById("player-icon").src="./icons/question-mark.svg";
-    document.getElementById("computer-icon").src="./icons/question-mark.svg";
+    playerIcon.src="./icons/question-mark.svg";
+    computerIcon.src="./icons/question-mark.svg";
 
     playerWins = 0;
     computerWins = 0;
     updateResult(playerWins, computerWins);
     
     // enable buttons
-    const buttons = document.querySelectorAll(".choices");
     buttons.forEach((button) => {
         button.addEventListener("click", handleClick);
         button.disabled = false;
@@ -24,22 +29,14 @@ function resetGame() {
 
 function gameResult(playerWins, computerWins) {
     // add "Try Again" button
-    const container = document.querySelector(".container");
-    const referenceNode = document.querySelector(".result");
-    const tryAgainButton = document.createElement("button");
-    tryAgainButton.classList.add("try-again");
-    tryAgainButton.textContent = "Try Again";
     tryAgainButton.addEventListener("click", resetGame); 
-
     container.insertBefore(tryAgainButton, referenceNode);
     
-    const message = document.querySelector(".message");
     if (playerWins === computerWins) message.textContent = "It's a tie!";
     else if (playerWins > computerWins) message.textContent = "You win!";
     else message.textContent = "Computer wins!";
 
     // disable buttons
-    const buttons = document.querySelectorAll(".choices");
     buttons.forEach((button) => {
         button.removeEventListener("click", handleClick);
         button.disabled = true;
@@ -47,22 +44,21 @@ function gameResult(playerWins, computerWins) {
 }
 
 function updateResult(playerWins, computerWins) {
-    let playerCurrentResult = document.querySelector(".player .counter");
-    playerCurrentResult.textContent = playerWins;
-    let computerCurrentResult = document.querySelector(".computer .counter");
-    computerCurrentResult.textContent = computerWins;
+    let playerCounter = document.querySelector(".player .counter");
+    let computerCounter = document.querySelector(".computer .counter");
+    playerCounter.textContent = playerWins;
+    computerCounter.textContent = computerWins;
 }
 
 function updateMessage(result) {
-    const message = document.querySelector(".message");
     if (result === -1) message.textContent = "It's a tie in this round";
     else if (result === 1) message.textContent = "You win in this round";
     else message.textContent = "Computer wins in this round";
 }
 
 function updateIcon(playerSelection, computerSelection) {
-    document.getElementById("player-icon").src=`./icons/${playerSelection}.svg`;
-    document.getElementById("computer-icon").src=`./icons/${computerSelection}.svg`;
+    playerIcon.src=`./icons/${playerSelection}.svg`;
+    computerIcon.src=`./icons/${computerSelection}.svg`;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -109,7 +105,6 @@ let playerWins = 0;
 let computerWins = 0;
 updateResult(playerWins, computerWins);
 
-const buttons = document.querySelectorAll(".choices");
 buttons.forEach((button) => {
   button.addEventListener("click", handleClick);
 });
