@@ -3,8 +3,34 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="scripts.js"></script>
+    <link rel="shortcut icon" href="./icons/pink-scissors.svg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="buttons">
+        <input type="image" id="rock" class="choices" src="./icons/rock.svg" alt="Rock"/>
+        <input type="image" id="paper" class="choices" src="./icons/paper.svg" alt="Paper"/>
+        <input type="image" id="scissors" class="choices" src="./icons/scissors.svg" alt="Scissors"/>
+    </div>
+    <div class="container">
+        <div class="message">Make a choice to start the game</div>
+        <div class="result">
+            <div class="player">
+                <img id="player-icon" src="./icons/question-mark.svg" alt="Player's icon">
+                <div class="text">You</div>
+                <div class="counter">0</div>
+            </div>
+            <div class="computer">
+                <img id="computer-icon" src="./icons/question-mark.svg" alt="Computer's icon">
+                <div class="text">Computer</div>
+                <div class="counter">0</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <a href="https://github.com/andziuba"><img src="./icons/github-mark.svg" alt="GitHub logo"></a>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
