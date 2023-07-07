@@ -4,7 +4,7 @@ const message = document.querySelector(".message");
 const referenceNode = document.querySelector(".result");
 const playerIcon = document.getElementById("player-icon");
 const computerIcon = document.getElementById("computer-icon");
-const tryAgainButton = document.querySelector(".try-again");
+const tryAgainButton = document.createElement("button");
 tryAgainButton.classList.add("try-again");
 tryAgainButton.textContent = "Try Again";
 
