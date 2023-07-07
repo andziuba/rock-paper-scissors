@@ -25,11 +25,13 @@ function resetGame() {
 function gameResult(playerWins, computerWins) {
     // add "Try Again" button
     const container = document.querySelector(".container");
+    const referenceNode = document.querySelector(".result");
     const tryAgainButton = document.createElement("button");
     tryAgainButton.classList.add("try-again");
     tryAgainButton.textContent = "Try Again";
     tryAgainButton.addEventListener("click", resetGame); 
-    container.appendChild(tryAgainButton);
+
+    container.insertBefore(tryAgainButton, referenceNode);
     
     const message = document.querySelector(".message");
     if (playerWins === computerWins) message.textContent = "It's a tie!";
