@@ -1,0 +1,153 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    align-items: stretch;
+    font-family: "Century Gothic", sans-serif;
+    background-color: #fff0e0;
+    margin: 0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5a36b;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+}
+  
+h1:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #ec677a, #f9d042, #86c1d3);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+h1:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.choices {
+    min-width: 40px;
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.choices:hover,
+.choices:active {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+#rock {
+    background-color: #ec677a;
+    border: 50px solid #ec677a;
+}
+
+#paper {
+    background-color: #f9d042;
+    border: 50px solid #f9d042;
+}
+
+#scissors {
+    background-color: #86c1d3;
+    border: 50px solid #86c1d3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.message {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img {
+    width: 60px;
+    height: 60px;
+}
+
+.player,
+.computer {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.counter {
+    font-size: 25px;
+}
+
+.try-again {
+    background-color: #f5a36b;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: 2px solid #f5a36b;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: 0.25s;
+}
+
+.try-again:hover,
+.try-again:focus {
+    border-color: #f5a36b;
+    background-color: #fff0e0;
+    cursor: pointer;
+}
+
+#footer {
+    color: #f9faf8;
+    font-size: 14px;
+    padding: 8px 100px;
+    background-color: #f5a36b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer img {
+    width: 40px;
+    height: auto;
+}
+
+#footer img:hover {
+    opacity: .5;
+}
