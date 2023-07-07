@@ -7,12 +7,14 @@ body {
     font-family: "Century Gothic", sans-serif;
     background-color: #fff0e0;
     margin: 0;
+    text-align: center;
 }
 
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background-color: #f5a36b;
     margin: 0;
     padding: 10px;
@@ -46,8 +48,10 @@ h1:hover:after {
 }
 
 .choices {
+    width: 100%;
     max-width: 100px;
     height: auto;
+    padding: 20px;
     border-radius: 8px;
 }
 
@@ -59,17 +63,17 @@ h1:hover:after {
 
 #rock {
     background-color: #ec677a;
-    border: 50px solid #ec677a;
+    border: solid #ec677a;
 }
 
 #paper {
     background-color: #f9d042;
-    border: 50px solid #f9d042;
+    border: solid #f9d042;
 }
 
 #scissors {
     background-color: #86c1d3;
-    border: 50px solid #86c1d3;
+    border: solid #86c1d3;
 }
 
 .container {
